@@ -3,6 +3,9 @@ package com.ztn.ranger
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import com.ztn.common.ToastHelper
+import com.ztn.common.utils.animation.viewClick
+import com.ztn.common.utils.dip2px
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -30,5 +33,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+        ToastHelper.showToast("创建了一个activity")
+
+        1f.dip2px
+
+        message.setOnClickListener {
+            viewClick(MainActivity::class.java)
+        }
     }
 }
