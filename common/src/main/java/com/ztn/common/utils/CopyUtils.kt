@@ -16,7 +16,7 @@ fun Parcelable.deepCopy(): Parcelable {
         parcel!!.writeParcelable(this, 0)
 
         parcel.setDataPosition(0)
-        return parcel.readParcelable<Parcelable>(javaClass.classLoader)
+        return parcel.readParcelable(javaClass.classLoader)!!
     } finally {
         parcel?.recycle()
     }

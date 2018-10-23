@@ -6,6 +6,7 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.BounceInterpolator
 import android.view.animation.TranslateAnimation
+import com.ztn.common.utils.gone
 
 /**
  * Created by 冒险者ztn on 2018/8/20.
@@ -92,6 +93,6 @@ fun View.moveFromXY(): View {
 
     animSet.duration = 500
     animSet.start()
-    this.visibility = View.GONE
+    this.gone()
     return this
 }

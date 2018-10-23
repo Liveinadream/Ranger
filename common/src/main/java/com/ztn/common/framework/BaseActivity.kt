@@ -2,6 +2,7 @@ package com.ztn.common.framework
 
 import android.content.res.Configuration
 import android.content.res.Resources
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 
@@ -28,7 +29,9 @@ open class BaseActivity : AppCompatActivity() {
         val res = super.getResources()
         val config = Configuration()
         config.setToDefaults()
-        createConfigurationContext(config)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            createConfigurationContext(config)
+        }
         res.updateConfiguration(config, res.displayMetrics)
         return res
 
