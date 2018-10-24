@@ -17,7 +17,7 @@ val String.isEmail: Boolean
 
 val String.isPhoneNumber: Boolean
     get() {
-        val p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$")
+        val p = Pattern.compile("^(13[0-9]|14[1|4|5|6|7|8]|15[0|1|2|3|5|6|7|8|9]|166|17[0|1|3|5|6|7|8]|18[0-9]|19[8|9])\\d{8}$")
         val m = p.matcher(this)
         return m.matches()
     }

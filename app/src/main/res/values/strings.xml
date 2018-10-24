@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">Ranger</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+	<string name="app_name">Ranger</string>
+	<string name="title_home">Home</string>
+	<string name="default_string">default_string</string>
+	<string name="createDialog">创建一个dialog</string>
+	<string name="crashInit">错误日志初始化</string>
+	<string name="title_dashboard">Dashboard</string>
+	<string name="title_notifications">Notifications</string>
 </resources>

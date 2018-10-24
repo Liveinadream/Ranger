@@ -10,7 +10,7 @@ allprojects {
 ```
 ```
 dependencies {
-        implementation 'com.github.Liveinadream:Ranger:1.0.1'
+        implementation 'com.github.Liveinadream:Ranger:1.0.2'
 }
 ```
 
@@ -47,5 +47,7 @@ dependencies {
 ```
     view.gone()
 ```
+
+在 MainActivity 加入了一些示例
 
 如果你有好的意见或建议，可以联系 qq 或者在 issues 中提出。

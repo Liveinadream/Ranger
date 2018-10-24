@@ -2,8 +2,10 @@ package com.ztn.common.utils
 
 import android.util.Log
 
-fun log(content: Any?) {
-    Log.d("ztn", "$content")
+var commonTag = "commonTag"
+
+fun log(content: Any?, tag: String = commonTag) {
+    Log.d(tag, "$content")
 }
 
 fun <T> T.show(varName: String): T {

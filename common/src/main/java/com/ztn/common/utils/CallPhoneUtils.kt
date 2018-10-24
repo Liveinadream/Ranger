@@ -12,6 +12,7 @@ class CallPhoneUtils {
 
     companion object {
         fun startCallPhone(phone: String) {
+            //you should requestPermission by yourself
             val phoneIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phone"))
             phoneIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             AppManager.context.startActivity(phoneIntent)
