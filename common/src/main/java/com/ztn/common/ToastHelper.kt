@@ -1,6 +1,7 @@
 package com.ztn.common
 
 import android.content.Context
+import android.os.Looper
 import android.widget.Toast
 import com.ztn.common.framework.AppManager
 
@@ -82,23 +83,50 @@ object ToastHelper {
     }
 
 
-    @JvmStatic fun showSingleLongToast(text: String) {
+    @JvmStatic
+    fun showSingleLongToast(text: String) {
         getSingleLongToast(text).show()
     }
 
     fun showToast(resId: Int) {
-        getToast(resId).show()
+        if (Thread.currentThread() != Looper.getMainLooper().thread) {
+            Looper.prepare()
+            getToast(resId).show()
+            Looper.loop()
+        } else {
+            getToast(resId).show()
+        }
     }
 
     fun showToast(text: String) {
-        getToast(text).show()
+        if (Thread.currentThread() != Looper.getMainLooper().thread) {
+            Looper.prepare()
+            getToast(text).show()
+            Looper.loop()
+        } else {
+            getToast(text).show()
+        }
     }
 
     fun showLongToast(resId: Int) {
-        getLongToast(resId).show()
+        if (Thread.currentThread() != Looper.getMainLooper().thread) {
+            Looper.prepare()
+            getLongToast(resId).show()
+            Looper.loop()
+        } else {
+            getLongToast(resId).show()
+
+        }
     }
 
     fun showLongToast(text: String) {
-        getLongToast(text).show()
+        if (Thread.currentThread() != Looper.getMainLooper().thread) {
+            Looper.prepare()
+            getLongToast(text).show()
+            Looper.loop()
+        } else {
+            getLongToast(text).show()
+
+        }
     }
 }

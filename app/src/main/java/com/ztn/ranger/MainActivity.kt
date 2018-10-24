@@ -37,7 +37,9 @@ class MainActivity : AppCompatActivity() {
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-        ToastHelper.showToast("创建了一个activity")
+        Thread {
+            ToastHelper.showToast("创建了一个activity")
+        }.start()
 
         1f.dip2px.show("单位转换")
         8.sp2px.show("单位转换")
