@@ -1,6 +1,5 @@
 package com.ztn.ranger
 
-import android.app.Dialog
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
@@ -9,6 +8,8 @@ import com.ztn.common.customs.CustomProgressDialog
 import com.ztn.common.utils.*
 import com.ztn.common.utils.animation.viewClick
 import com.ztn.common.utils.wayutils.DialogUtils
+import com.ztn.common.version.supportsM
+import com.ztn.common.version.supportsO
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -73,6 +74,13 @@ class MainActivity : AppCompatActivity() {
             viewClick(MainActivity::class.java)
         }
 
+        supportsO {
+            print("这个机器在O以上")
+        }
+
+        supportsM {
+            print("这个机器在M以上")
+        }
 
     }
 
