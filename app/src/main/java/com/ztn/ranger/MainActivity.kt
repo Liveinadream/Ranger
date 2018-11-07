@@ -3,6 +3,7 @@ package com.ztn.ranger
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import com.ztn.common.DelegatesExt
 import com.ztn.common.ToastHelper
 import com.ztn.common.customs.CustomProgressDialog
 import com.ztn.common.utils.*
@@ -32,10 +33,12 @@ class MainActivity : AppCompatActivity() {
         false
     }
 
+    private var aa: ArrayList<String> by DelegatesExt.notNullSingleValue()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        aa = ArrayList()
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         Thread {
@@ -80,6 +83,12 @@ class MainActivity : AppCompatActivity() {
 
         supportsM {
             print("这个机器在M以上")
+        }
+
+        try {
+            aa = ArrayList()
+        }catch (e:Exception){
+            e.printStackTrace()
         }
 
     }
