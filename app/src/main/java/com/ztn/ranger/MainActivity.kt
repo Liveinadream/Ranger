@@ -6,12 +6,14 @@ import android.support.v7.app.AppCompatActivity
 import com.ztn.common.DelegatesExt
 import com.ztn.common.ToastHelper
 import com.ztn.common.customs.CustomProgressDialog
+import com.ztn.common.framework.AppManager
 import com.ztn.common.utils.*
 import com.ztn.common.utils.animation.viewClick
 import com.ztn.common.utils.wayutils.DialogUtils
 import com.ztn.common.version.supportsM
 import com.ztn.common.version.supportsO
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.NullPointerException
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppManager.get().addActivity(this)
         setContentView(R.layout.activity_main)
         aa = ArrayList()
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)

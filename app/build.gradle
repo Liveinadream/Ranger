@@ -34,5 +34,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     api project(':common')
-//    implementation 'com.github.Liveinadream:Ranger:1.0.1'
+    // Anko Commons
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
 }
