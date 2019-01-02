@@ -37,6 +37,15 @@ open class BaseActivity : AppCompatActivity() {
 
     }
 
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        //非默认值
+        if (newConfig.fontScale != 1f) {
+            resources
+        }
+        super.onConfigurationChanged(newConfig)
+    }
+
+
     //TODO updateConfiguration 方法已过期，是否使用以下方法，有待测试
 //    override fun getBaseContext(): Context {
 //        val config = Configuration()

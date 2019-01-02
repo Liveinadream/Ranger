@@ -5,6 +5,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import com.ztn.common.DelegatesExt
 import com.ztn.common.ToastHelper
+import com.ztn.common.best.InvSqrt
 import com.ztn.common.customs.CustomProgressDialog
 import com.ztn.common.framework.AppManager
 import com.ztn.common.utils.*
@@ -13,7 +14,6 @@ import com.ztn.common.utils.wayutils.DialogUtils
 import com.ztn.common.version.supportsM
 import com.ztn.common.version.supportsO
 import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.NullPointerException
 
 class MainActivity : AppCompatActivity() {
 
@@ -87,12 +87,14 @@ class MainActivity : AppCompatActivity() {
         supportsM {
             print("这个机器在M以上")
         }
+        print("开根号获取的数为：${InvSqrt(4f)}")
 
-        try {
-            aa = ArrayList()
-        }catch (e:Exception){
-            e.printStackTrace()
-        }
+//        try {
+//            aa = ArrayList()
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+
 
     }
 

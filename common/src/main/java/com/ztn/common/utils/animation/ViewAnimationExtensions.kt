@@ -93,6 +93,6 @@ fun View.moveFromXY(): View {
 
     animSet.duration = 500
     animSet.start()
-    this.gone()
+    gone()
     return this
 }
