@@ -25,7 +25,7 @@ dependencies {
     viewClick(MainActivity::class.java)
 ```
 
-> 吐司
+> 吐司(已确保在小米设备不提示app名称)
 
 ```
     ToastHelper.showToast("创建了一个activity")

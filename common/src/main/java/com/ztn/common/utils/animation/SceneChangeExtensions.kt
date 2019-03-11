@@ -3,6 +3,7 @@ package com.ztn.common.utils.animation
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
@@ -116,4 +117,14 @@ fun Context.viewClick(intent: Intent) {
     ActivityCompat.startActivity(this, intent, null)
 }
 
+
+inline fun <reified F : Fragment> Context.newFragment(vararg args: Pair<String, String>): F {
+    val bundle = Bundle()
+    args.let {
+        for (arg in args) {
+            bundle.putString(arg.first, arg.second)
+        }
+    }
+    return Fragment.instantiate(this, F::class.java.name, bundle) as F
+}
 
