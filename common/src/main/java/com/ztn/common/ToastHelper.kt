@@ -20,7 +20,7 @@ object ToastHelper {
         return Toast.makeText(currentContext, resId, Toast.LENGTH_SHORT)
     }
 
-    fun getToast(text: String?): Toast {
+    fun getToast(text: String): Toast {
         return Toast.makeText(currentContext, text, Toast.LENGTH_SHORT)
     }
 
@@ -28,7 +28,7 @@ object ToastHelper {
         return Toast.makeText(currentContext, resId, Toast.LENGTH_LONG)
     }
 
-    fun getLongToast(text: String?): Toast {
+    fun getLongToast(text: String): Toast {
         return Toast.makeText(currentContext, text, Toast.LENGTH_LONG)
     }
 
@@ -99,7 +99,7 @@ object ToastHelper {
     }
 
     fun showToast(text: String) {
-        val toast = ToastHelper.getToast(null)
+        val toast = ToastHelper.getToast("")
         toast.setText(text)
         if (Thread.currentThread() != Looper.getMainLooper().thread) {
             Looper.prepare()
@@ -122,7 +122,7 @@ object ToastHelper {
     }
 
     fun showLongToast(text: String) {
-        val toast = ToastHelper.getLongToast(null)
+        val toast = ToastHelper.getLongToast("")
         toast.setText(text)
         if (Thread.currentThread() != Looper.getMainLooper().thread) {
             Looper.prepare()
