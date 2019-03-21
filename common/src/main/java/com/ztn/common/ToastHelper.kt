@@ -100,9 +100,9 @@ object ToastHelper {
 
     fun showToast(text: String) {
         if (Thread.currentThread() != Looper.getMainLooper().thread) {
+            Looper.prepare()
             val toast = ToastHelper.getToast("")
             toast.setText(text)
-            Looper.prepare()
             toast.show()
             Looper.loop()
         } else {
@@ -125,9 +125,9 @@ object ToastHelper {
 
     fun showLongToast(text: String) {
         if (Thread.currentThread() != Looper.getMainLooper().thread) {
+            Looper.prepare()
             val toast = ToastHelper.getLongToast("")
             toast.setText(text)
-            Looper.prepare()
             toast.show()
             Looper.loop()
         } else {
