@@ -99,13 +99,15 @@ object ToastHelper {
     }
 
     fun showToast(text: String) {
-        val toast = ToastHelper.getToast("")
-        toast.setText(text)
         if (Thread.currentThread() != Looper.getMainLooper().thread) {
+            val toast = ToastHelper.getToast("")
+            toast.setText(text)
             Looper.prepare()
             toast.show()
             Looper.loop()
         } else {
+            val toast = ToastHelper.getToast("")
+            toast.setText(text)
             toast.show()
         }
     }
@@ -122,13 +124,15 @@ object ToastHelper {
     }
 
     fun showLongToast(text: String) {
-        val toast = ToastHelper.getLongToast("")
-        toast.setText(text)
         if (Thread.currentThread() != Looper.getMainLooper().thread) {
+            val toast = ToastHelper.getLongToast("")
+            toast.setText(text)
             Looper.prepare()
             toast.show()
             Looper.loop()
         } else {
+            val toast = ToastHelper.getLongToast("")
+            toast.setText(text)
             toast.show()
         }
     }
