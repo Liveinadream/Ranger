@@ -10,7 +10,7 @@ allprojects {
 ```
 ```
 dependencies {
-        implementation 'com.github.Liveinadream:Ranger:1.0.8'
+        implementation 'com.github.Liveinadream:Ranger:1.0.'
 }
 ```
 
